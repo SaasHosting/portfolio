@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The #1 Blogger Outreach (Guest Posting) Service. Outreach Nomads.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --brand: #38bdf8;
+    --brand-dark: #0ea5e9;
+    --brand-deeper: #0284c7;
+    --brand-light: #e0f5fe;
+    --brand-xlight: #f0faff;
+    --dark: #0f172a;
+    --mid: #334155;
+    --soft: #64748b;
+    --border: #e2e8f0;
+    --white: #ffffff;
+    --green-check: #22c55e;
+    --star: #f59e0b;
+    --radius: 12px;
+    --radius-lg: 20px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Figtree', sans-serif;
+    color: var(--dark);
+    background: #fff;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px;
+    display: flex; align-items: center; gap: 32px;
+    height: 64px;
+  }
+  .nav-logo {
+    font-size: 1.4rem; font-weight: 900; color: var(--dark);
+    letter-spacing: -0.04em; white-space: nowrap;
+  }
+  .nav-logo span { color: var(--brand-dark); }
+  .nav-links {
+    display: flex; align-items: center; gap: 4px; list-style: none; flex: 1;
+  }
+  .nav-links > li { position: relative; }
+  .nav-links > li > a {
+    padding: 8px 12px; border-radius: 8px; font-weight: 600; font-size: 0.88rem;
+    color: var(--mid); transition: background 0.15s, color 0.15s;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .nav-links > li > a:hover { background: var(--brand-xlight); color: var(--brand-dark); }
+  .nav-links > li > a.active { color: var(--brand-dark); }
+  .nav-links .chevron { font-size: 0.7rem; opacity: 0.5; }
+  .nav-actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+  .btn-login {
+    font-size: 0.88rem; font-weight: 600; color: var(--mid);
+    padding: 8px 14px; border-radius: 8px; transition: background 0.15s;
+  }
+  .btn-login:hover { background: var(--border); }
+  .btn-signup {
+    background: var(--brand); color: var(--dark); font-weight: 700;
+    padding: 9px 18px; border-radius: 8px; font-size: 0.88rem;
+    transition: background 0.15s;
+  }
+  .btn-signup:hover { background: var(--brand-dark); color: #fff; }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--dark) 0%, #1e3a5f 50%, #0c4a6e 100%);
+    color: #fff;
+    padding: 80px 32px 60px;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(56,189,248,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-label {
+    display: inline-block; background: rgba(56,189,248,0.15); border: 1px solid rgba(56,189,248,0.35);
+    color: var(--brand); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 999px; margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; line-height: 1.1;
+    letter-spacing: -0.03em; max-width: 760px; margin: 0 auto 10px;
+  }
+  .hero h2 {
+    font-size: clamp(1rem, 2.5vw, 1.3rem); font-weight: 400; color: rgba(255,255,255,0.75);
+    max-width: 640px; margin: 0 auto 32px; line-height: 1.5;
+  }
+  .hero-bullets {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 24px;
+    margin-bottom: 32px; list-style: none;
+  }
+  .hero-bullets li {
+    display: flex; align-items: center; gap: 7px;
+    font-size: 0.92rem; color: rgba(255,255,255,0.88);
+  }
+  .hero-bullets li::before {
+    content: '✓'; width: 18px; height: 18px; background: var(--brand);
+    color: var(--dark); border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 0.65rem; font-weight: 900; flex-shrink: 0;
+  }
+  .hero-rating { font-size: 0.88rem; color: rgba(255,255,255,0.6); margin-bottom: 28px; }
+  .hero-rating span { color: var(--star); }
+  .hero-rating a { color: rgba(255,255,255,0.8); text-decoration: underline; }
+  .hero-ctas { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--brand); color: var(--dark); font-weight: 800;
+    padding: 14px 28px; border-radius: 10px; font-size: 1rem;
+    transition: transform 0.15s, background 0.15s; letter-spacing: -0.01em;
+  }
+  .btn-primary:hover { background: var(--brand-dark); color: #fff; transform: translateY(-1px); }
+  .btn-ghost {
+    background: transparent; color: #fff; font-weight: 700;
+    padding: 14px 28px; border-radius: 10px; font-size: 1rem;
+    border: 1.5px solid rgba(255,255,255,0.25); transition: border-color 0.15s, background 0.15s;
+  }
+  .btn-ghost:hover { border-color: var(--brand); background: rgba(56,189,248,0.08); }
+
+  /* ── SECTION WRAPPER ── */
+  .section { padding: 72px 32px; }
+  .section-center { text-align: center; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-tag {
+    display: inline-block; background: var(--brand-light); color: var(--brand-deeper);
+    font-weight: 700; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 999px; margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  .section-sub { font-size: 1rem; color: var(--soft); max-width: 560px; margin: 0 auto; }
+
+  /* ── PRICING ── */
+  .pricing-section { background: var(--brand-xlight); }
+  .pricing-toggle {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    margin-bottom: 36px; font-weight: 600; font-size: 0.88rem; color: var(--soft);
+  }
+  .toggle-pill {
+    display: flex; background: var(--border); border-radius: 999px; padding: 3px;
+  }
+  .toggle-pill button {
+    border: none; background: none; padding: 5px 14px; border-radius: 999px;
+    font-weight: 600; font-size: 0.82rem; cursor: pointer; transition: all 0.15s;
+    color: var(--soft);
+  }
+  .toggle-pill button.active { background: var(--dark); color: #fff; }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .price-card {
+    background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius);
+    padding: 22px 18px; text-align: center; transition: border-color 0.15s, box-shadow 0.15s;
+    position: relative; cursor: pointer;
+  }
+  .price-card:hover { border-color: var(--brand); box-shadow: 0 4px 20px rgba(56,189,248,0.15); }
+  .price-card.popular { border-color: var(--brand); box-shadow: 0 4px 20px rgba(56,189,248,0.2); }
+  .popular-badge {
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--brand); color: var(--dark); font-size: 0.7rem; font-weight: 800;
+    padding: 3px 10px; border-radius: 999px; white-space: nowrap; letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .price-tier {
+    font-size: 1.4rem; font-weight: 900; color: var(--dark); letter-spacing: -0.03em; margin-bottom: 3px;
+  }
+  .price-traffic { font-size: 0.75rem; color: var(--soft); margin-bottom: 14px; }
+  .price-amount { font-size: 1.5rem; font-weight: 900; color: var(--brand-deeper); margin-bottom: 4px; }
+  .price-per { font-size: 0.75rem; color: var(--soft); margin-bottom: 14px; }
+  .price-order {
+    display: block; background: var(--brand); color: var(--dark); font-weight: 800;
+    padding: 9px; border-radius: 8px; font-size: 0.85rem; transition: background 0.15s;
+  }
+  .price-order:hover { background: var(--brand-dark); color: #fff; }
+
+  /* ── WHAT'S INCLUDED ── */
+  .included-box {
+    background: var(--dark); color: #fff; border-radius: var(--radius-lg);
+    padding: 36px 40px; max-width: 900px; margin: 0 auto;
+  }
+  .included-box h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 20px; color: var(--brand); }
+  .included-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 40px; margin-bottom: 24px; }
+  .included-item { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; }
+  .included-item::before {
+    content: '✓'; width: 18px; height: 18px; background: var(--brand);
+    color: var(--dark); border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 0.65rem; font-weight: 900; flex-shrink: 0;
+  }
+  .included-item.has-icon { display: flex; align-items: center; gap: 8px; }
+  .ahrefs-badge {
+    background: rgba(56,189,248,0.15); border: 1px solid rgba(56,189,248,0.25);
+    border-radius: 6px; padding: 2px 8px; font-size: 0.75rem; font-weight: 700; color: var(--brand); margin-left: 4px;
+  }
+  .included-links {
+    display: flex; gap: 16px; flex-wrap: wrap; padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem;
+  }
+  .included-links a { color: var(--brand); text-decoration: underline; }
+  .watch-btn {
+    display: inline-flex; align-items: center; gap: 8px; background: var(--brand-xlight);
+    border: 1.5px solid var(--brand); color: var(--brand-deeper); font-weight: 700;
+    padding: 11px 22px; border-radius: 10px; font-size: 0.92rem; margin-top: 28px;
+    transition: background 0.15s;
+  }
+  .watch-btn:hover { background: var(--brand-light); }
+  .play-icon {
+    width: 26px; height: 26px; background: var(--brand); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .play-icon::after { content: '▶'; font-size: 0.6rem; color: var(--dark); margin-left: 2px; }
+
+  /* ── HOW IT WORKS ── */
+  .how-section { background: #fff; }
+  .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; margin-top: 44px; }
+  .step-card { border: 1.5px solid var(--border); border-radius: var(--radius-lg); padding: 32px 28px; }
+  .step-num {
+    width: 40px; height: 40px; background: var(--brand-xlight); color: var(--brand-deeper);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: 1.1rem; margin-bottom: 18px;
+  }
+  .step-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 10px; }
+  .step-card p { font-size: 0.9rem; color: var(--soft); line-height: 1.65; }
+
+  /* ── BENEFITS ── */
+  .benefits-section { background: var(--brand-xlight); }
+  .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 40px; }
+  .benefit-card {
+    background: var(--white); border-radius: var(--radius); padding: 26px 22px;
+    border: 1.5px solid var(--border);
+  }
+  .benefit-icon {
+    width: 44px; height: 44px; background: var(--brand-light); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 14px;
+  }
+  .benefit-card h3 { font-size: 1rem; font-weight: 800; margin-bottom: 8px; }
+  .benefit-card p { font-size: 0.85rem; color: var(--soft); line-height: 1.6; }
+
+  /* ── GUARANTEE ── */
+  .guarantee-section {
+    background: linear-gradient(135deg, var(--dark) 0%, #0c4a6e 100%);
+    color: #fff; text-align: center;
+  }
+  .guarantee-badge {
+    width: 90px; height: 90px; background: var(--brand); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem; margin: 0 auto 24px;
+    box-shadow: 0 0 40px rgba(56,189,248,0.4);
+  }
+  .guarantee-section h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 900; margin-bottom: 16px; letter-spacing: -0.03em; }
+  .guarantee-section p { color: rgba(255,255,255,0.75); max-width: 560px; margin: 0 auto 24px; font-size: 1rem; }
+  .guarantee-sig { font-size: 0.88rem; color: rgba(255,255,255,0.5); margin-top: 24px; }
+  .rating-pill {
+    display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15); border-radius: 999px;
+    padding: 8px 18px; font-size: 0.88rem; color: rgba(255,255,255,0.8); margin-top: 20px;
+  }
+  .stars { color: var(--star); letter-spacing: 2px; }
+
+  /* ── FAQ ── */
+  .faq-section { background: var(--white); }
+  .faq-list { max-width: 780px; margin: 40px auto 0; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-q {
+    width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+    padding: 20px 0; display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.98rem; font-weight: 700; color: var(--dark); gap: 16px;
+    font-family: 'Figtree', sans-serif;
+  }
+  .faq-q:hover { color: var(--brand-dark); }
+  .faq-icon {
+    width: 24px; height: 24px; background: var(--brand-xlight); color: var(--brand-dark);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; flex-shrink: 0; transition: transform 0.2s;
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--brand); color: var(--dark); }
+  .faq-a {
+    font-size: 0.9rem; color: var(--soft); line-height: 1.75;
+    max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s;
+  }
+  .faq-item.open .faq-a { max-height: 500px; padding-bottom: 20px; }
+
+  /* ── REVIEWS ── */
+  .reviews-section { background: var(--brand-xlight); }
+  .reviews-header { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 36px; }
+  .overall-score { text-align: center; }
+  .score-num { font-size: 3.5rem; font-weight: 900; color: var(--dark); line-height: 1; }
+  .score-label { font-size: 0.8rem; color: var(--soft); }
+  .percent-badge {
+    background: var(--brand); color: var(--dark); font-weight: 800; font-size: 1.6rem;
+    padding: 12px 20px; border-radius: var(--radius); letter-spacing: -0.02em;
+  }
+  .percent-label { font-size: 0.82rem; color: var(--soft); max-width: 200px; }
+  .reviews-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px; margin-bottom: 28px;
+  }
+  .review-card {
+    background: var(--white); border-radius: var(--radius); padding: 18px 16px;
+    border: 1px solid var(--border);
+  }
+  .review-meta { display: flex; justify-content: space-between; margin-bottom: 8px; }
+  .review-time { font-size: 0.75rem; color: var(--soft); }
+  .review-stars { color: var(--star); font-size: 0.8rem; }
+  .review-text { font-size: 0.88rem; color: var(--mid); margin-bottom: 10px; font-weight: 500; }
+  .review-author { font-size: 0.8rem; color: var(--soft); font-weight: 600; }
+  .see-more-btn {
+    display: inline-flex; align-items: center; gap: 6px; color: var(--brand-darker);
+    font-weight: 700; font-size: 0.9rem; border-bottom: 2px solid var(--brand); padding-bottom: 2px;
+  }
+
+  /* ── CTA BOTTOM ── */
+  .cta-section {
+    background: linear-gradient(135deg, #0c4a6e 0%, var(--dark) 100%);
+    color: #fff; text-align: center; position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(56,189,248,0.12) 0%, transparent 70%);
+  }
+  .cta-pills { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 32px; }
+  .cta-pill {
+    background: rgba(56,189,248,0.12); border: 1px solid rgba(56,189,248,0.25);
+    border-radius: 999px; padding: 8px 18px; font-size: 0.85rem; font-weight: 600; color: var(--brand);
+  }
+  .cta-pill span { font-size: 1rem; font-weight: 900; display: block; }
+  .cta-section h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; margin-bottom: 28px; letter-spacing: -0.03em; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark); color: rgba(255,255,255,0.7);
+    padding: 60px 32px 32px;
+  }
+  .footer-top { display: grid; grid-template-columns: 1.5fr repeat(4, 1fr); gap: 40px; margin-bottom: 48px; }
+  .footer-brand h3 { font-size: 1.5rem; font-weight: 900; color: #fff; margin-bottom: 6px; letter-spacing: -0.04em; }
+  .footer-brand h3 span { color: var(--brand); }
+  .footer-brand p { font-size: 0.85rem; line-height: 1.6; margin-bottom: 16px; }
+  .charity-box {
+    background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.2);
+    border-radius: 10px; padding: 14px; font-size: 0.8rem; line-height: 1.6;
+  }
+  .charity-box strong { color: #fff; display: block; margin-bottom: 4px; }
+  .charity-box a { color: var(--brand); }
+  .footer-col h4 { font-size: 0.85rem; font-weight: 800; color: #fff; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a { font-size: 0.85rem; color: rgba(255,255,255,0.55); transition: color 0.15s; }
+  .footer-col ul li a:hover { color: var(--brand); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: gap;
+    font-size: 0.8rem; color: rgba(255,255,255,0.35); gap: 14px; flex-wrap: wrap;
+  }
+  .footer-social { display: flex; gap: 10px; }
+  .footer-social a {
+    width: 32px; height: 32px; border-radius: 8px; background: rgba(255,255,255,0.06);
+    display: flex; align-items: center; justify-content: center; font-size: 0.8rem;
+    color: rgba(255,255,255,0.5); transition: background 0.15s, color 0.15s;
+  }
+  .footer-social a:hover { background: var(--brand); color: var(--dark); }
+  .footer-legal a { color: rgba(255,255,255,0.35); margin-left: 14px; }
+  .footer-legal a:hover { color: var(--brand); }
+
+  /* ── EXAMPLES STRIP ── */
+  .examples-section { background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 56px 32px; }
+  .example-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 36px; }
+  .example-card {
+    border: 1.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
+    transition: box-shadow 0.15s, border-color 0.15s;
+  }
+  .example-card:hover { border-color: var(--brand); box-shadow: 0 4px 20px rgba(56,189,248,0.12); }
+  .example-thumb {
+    height: 140px; background: linear-gradient(135deg, var(--brand-xlight), var(--brand-light));
+    display: flex; align-items: center; justify-content: center; font-size: 2.5rem;
+  }
+  .example-card-body { padding: 18px; }
+  .example-card-body h4 { font-size: 0.95rem; font-weight: 800; margin-bottom: 6px; }
+  .example-card-body p { font-size: 0.82rem; color: var(--soft); }
+  .case-tag { display: inline-block; background: var(--brand-light); color: var(--brand-deeper); font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; margin-bottom: 8px; }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 16px; gap: 12px; }
+    .nav-links { display: none; }
+    .hero, .section { padding-left: 16px; padding-right: 16px; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .included-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Outreach<span>Nomads</span></div>
+  <ul class="nav-links">
+    <li><a href="#" class="active">Blogger Outreach</a></li>
+    <li><a href="#">Niche Edits</a></li>
+    <li><a href="#">Multilingual Outreach</a></li>
+    <li><a href="#">Grow (Packages)</a></li>
+    <li><a href="#">PR <span class="chevron">▾</span></a></li>
+    <li><a href="#">AI SEO <span class="chevron">▾</span></a></li>
+    <li><a href="#">Local SEO <span class="chevron">▾</span></a></li>
+    <li><a href="#">Content Writing <span class="chevron">▾</span></a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="#" class="btn-login">Login</a>
+    <a href="#" class="btn-signup">Create Account</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-label">The #1 Blogger Outreach Service</div>
+  <h1>Blogger Outreach</h1>
+  <h2>Save 100+ Hours Of Outreach. Let Us Handle Your Backlinks, You Take The Credit.</h2>
+  <ul class="hero-bullets">
+    <li>Natural, relevant, in-content links</li>
+    <li>Straight from the blogger — ghost posts, not guest posts</li>
+    <li>Lifetime link guarantee &amp; 100% money-back guarantee</li>
+  </ul>
+  <div class="hero-rating">
+    <span>★★★★★</span> Rated 4.8 based on <a href="#">1602 reviews</a>
+  </div>
+  <div class="hero-ctas">
+    <a href="#" class="btn-primary">Order Now</a>
+    <a href="#" class="btn-ghost">Book a call</a>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section pricing-section">
+  <div class="container section-center">
+    <div class="section-tag">Simple pricing</div>
+    <div class="pricing-toggle">
+      <div class="toggle-pill">
+        <button class="active">GBP</button>
+        <button>USD</button>
+      </div>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-tier">DR10+</div>
+        <div class="price-traffic">0–1000 monthly traffic</div>
+        <div class="price-amount">$72</div>
+        <div class="price-per">/ placement</div>
+        <a href="#" class="price-order">Order Now</a>
+      </div>
+      <div class="price-card">
+        <div class="price-tier">DR20+</div>
+        <div class="price-traffic">0–5k monthly traffic</div>
+        <div class="price-amount">$96</div>
+        <div class="price-per">/ placement</div>
+        <a href="#" class="price-order">Order Now</a>
+      </div>
+      <div class="price-card popular">
+        <div class="popular-badge">Most Popular</div>
+        <div class="price-tier">DR30+</div>
+        <div class="price-traffic">100–10k monthly traffic</div>
+        <div class="price-amount">$120</div>
+        <div class="price-per">/ placement</div>
+        <a href="#" class="price-order">Order Now</a>
+      </div>
+      <div class="price-card">
+        <div class="price-tier">DR40+</div>
+        <div class="price-traffic">500–20k monthly traffic</div>
+        <div class="price-amount">$216</div>
+        <div class="price-per">/ placement</div>
+        <a href="#" class="price-order">Order Now</a>
+      </div>
+      <div class="price-card">
+        <div class="price-tier">DR50+</div>
+        <div class="price-traffic">1k–30k monthly traffic</div>
+        <div class="price-amount">$336</div>
+        <div class="price-per">/ placement</div>
+        <a href="#" class="price-order">Order Now</a>
+      </div>
+      <div class="price-card">
+        <div class="price-tier">DR60+</div>
+        <div class="price-traffic">1k–60k monthly traffic</div>
+        <div class="price-amount">$456</div>
+        <div class="price-per">/ placement</div>
+        <a href="#" class="price-order">Order Now</a>
+      </div>
+    </div>
+
+    <div class="included-box">
+      <h3>Blogger Outreach — What's included:</h3>
+      <div class="included-grid">
+        <div class="included-item">From 14 days delivery</div>
+        <div class="included-item">DR guaranteed <span class="ahrefs-badge">Ahrefs</span></div>
+        <div class="included-item">Ahrefs traffic guaranteed</div>
+        <div class="included-item">Money back guarantee</div>
+        <div class="included-item">100% genuine outreach</div>
+        <div class="included-item">Includes writing</div>
+        <div class="included-item">1 Anchor / URL</div>
+        <div class="included-item">Do-follow</div>
+        <div class="included-item">No duplicate domains</div>
+        <div class="included-item">Lifetime Link Guarantee</div>
+      </div>
+      <div class="included-links">
+        <a href="#">Example white label report</a>
+        <a href="#">See How It Works</a>
+      </div>
+    </div>
+
+    <div style="margin-top:28px; text-align:center; padding:20px; background:var(--white); border-radius:var(--radius); border:1.5px solid var(--border); max-width:700px; margin-left:auto; margin-right:auto;">
+      <p style="font-size:1rem; font-weight:700; margin-bottom:4px;">Bulk Buyer? Subscribe to your monthly spend and get <span style="color:var(--brand-dark)">10% off.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section how-section">
+  <div class="container section-center">
+    <div class="section-tag">Process</div>
+    <h2 class="section-title">How Blogger Outreach Works</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>The Outreach Stage</h3>
+        <p>You'll provide the anchor text, the target URLs and decide on the content length for your client's placements. Our outreach team will reach out to bloggers and evaluate suitable opportunities available to us.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>The Content Stage</h3>
+        <p>Our copywriting team will write the perfect blog post that relates to the blog owner's audience and includes a relevant, natural in-content link to your client. Unlike when you buy guest posts, the blog will come directly from the blog owner. No guest profiles.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>View Your Placements</h3>
+        <p>You'll get to see every blogger outreach link we secure live from your dashboard. We'll show you a snapshot of the full Domain Rating metrics as it was placed, and you can export an unbranded CSV for white labeling.</p>
+      </div>
+    </div>
+    <a href="#" class="watch-btn" style="margin-top:36px;">
+      <span class="play-icon"></span>
+      Watch It In Action
+    </a>
+  </div>
+</section>
+
+<!-- EXAMPLES & CASE STUDIES -->
+<section class="examples-section">
+  <div class="container section-center">
+    <div class="section-tag">Portfolio</div>
+    <h2 class="section-title">Examples and Case Studies</h2>
+    <div class="example-cards">
+      <div class="example-card">
+        <div class="example-thumb">📰</div>
+        <div class="example-card-body">
+          <span class="case-tag">Case Study</span>
+          <h4>SaaS Client — 312% Organic Growth</h4>
+          <p>DR40+ placements across tech and business blogs drove measurable SERP improvements within 90 days.</p>
+        </div>
+      </div>
+      <div class="example-card">
+        <div class="example-thumb">🏋️</div>
+        <div class="example-card-body">
+          <span class="case-tag">Example Link</span>
+          <h4>Health &amp; Fitness Niche</h4>
+          <p>Natural editorial link within a 1,000-word article on nutrition, placed on a DR52 lifestyle blog.</p>
+        </div>
+      </div>
+      <div class="example-card">
+        <div class="example-thumb">🏠</div>
+        <div class="example-card-body">
+          <span class="case-tag">Case Study</span>
+          <h4>Real Estate Agency — Page 1 Rankings</h4>
+          <p>30 high-DR placements over 6 months helped a regional estate agent rank for competitive local terms.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section benefits-section">
+  <div class="container section-center">
+    <div class="section-tag">Why Outreach Nomads</div>
+    <h2 class="section-title">Blogger Outreach Benefits</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🤝</div>
+        <h3>Genuine Outreach</h3>
+        <p>We secure placements on sites we've genuinely outreached to.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🔗</div>
+        <h3>In-Content Links</h3>
+        <p>Links exist editorially within the flow of the content, not author boxes.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">♾️</div>
+        <h3>Lifetime Link Guarantees</h3>
+        <p>We offer a lifetime guarantee on all links we place.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🚫</div>
+        <h3>No Duplicate Links</h3>
+        <p>We keep order histories to never duplicate placements per domain.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="section guarantee-section">
+  <div class="container">
+    <div class="guarantee-badge">💯</div>
+    <div class="section-tag" style="background:rgba(56,189,248,0.15); color:var(--brand);">Completely risk free</div>
+    <h2>100% Money Back Guarantee</h2>
+    <p>We believe in our Blogger Outreach service so much that we make your order <em>completely risk-free</em>. If it doesn't meet our guarantees, we'll refund you in full. Simple as that.</p>
+    <div class="rating-pill">
+      <span class="stars">★★★★★</span>
+      Rated 4.8 based on <a href="#" style="color:var(--brand); margin-left:4px;">1602 reviews</a>
+    </div>
+    <p class="guarantee-sig" style="margin-top:20px;">— The Outreach Nomads Team</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section">
+  <div class="container">
+    <div class="section-center">
+      <div class="section-tag">Got Questions?</div>
+      <h2 class="section-title">Check Out Our FAQs</h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item open">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          What is a Blogger Outreach Service and how does it help SEO?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Blogger Outreach, also known as influencer marketing or guest posting, is a link-building strategy that involves collaborating with relevant bloggers in your niche. By offering free content or partnerships, you create articles that align with the blog's audience while naturally incorporating a backlink to your website. Outreach Nomads' specialist team secures all mentions as editorial links from within the flow of an impartial, non-promotional blog post placement.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Is Blogger Outreach similar to a Guest Post Service?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Outreach Nomads' blogger outreach service differs from traditional guest posting by offering more natural link placement. While guest posts often include links in an author bio, blogger outreach integrates editorial links directly within the content, written in collaboration with the blog owner. This type of link placement is seen as more authoritative by search engines like Google.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Can I choose the Domain Rating of the blogs?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Absolutely! You choose the DR (Domain Rating) metrics you require for each placement. Domain Rating is updated regularly, so our system will show you the DR metrics at the time of placement. We use Ahrefs' Domain Rating (DR).
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          What will happen to my link history if I switch to your Blogger Outreach service?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          You don't need to worry about link history. Our dashboard, powered by the Ahrefs API, cross-references live Ahrefs link data to ensure we never duplicate link placements.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Who writes the content?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          We have exceptionally talented in-house writers who will create original, magazine-quality content designed to educate the website owner's target audience while naturally incorporating your client's link. Unlike guest blogging services, the content will appear to be written by the blog owner, for a more natural result.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Can I place one large order with multiple client domains?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Absolutely! Our Blogger Outreach Services allow you to select any quantity during the ordering process and customize your Domain Rating requirements and word counts. Just input your anchor text and target URLs for each entry. You can tag orders in your dashboard to help track which clients you have ordered for within each order.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Can we approve content or sites before you place the posts?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          While you won't be able to pre-approve blog post placements, you can track the live progress and view secured placements directly in your dashboard. The content is non-promotional and written in a ghost-blogging style, making pre-approval unnecessary.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          What countries do you secure placements in?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Our blogger outreach campaigns secure placements on English-speaking blogs. For UK, AUS &amp; CAN clients, we always look for blogs from those countries in the first instance, but we cannot guarantee them 100% of the time. In these cases, we fall back on blogs that have a worldwide audience (.com/.net, etc), which still pass the link authority.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          How long do your Blogger Outreach placements last?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Blogger Outreach placements typically last indefinitely, and we offer a <strong>lifetime guarantee on all links</strong>. Most will remain active for many years. If a link is removed or placement goes down, let us know, and we'll be happy to replace it for you.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          Can I resell your Blogger Outreach Services?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          As an outsourced link-building agency, our Blogger Outreach Service is simple to order and specifically designed for reselling. With a white-label CSV report provided, your clients will never know Outreach Nomads was part of their blogger outreach campaign.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFAQ(this)">
+          What is the difference between Blogger Outreach and Niche Edits?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          Our Blogger Outreach Service secures links within brand-new content, whereas Niche Edits is more like a link insertion. The Niche Edits process includes reaching out to a blogger and asking them to insert a text addition into an old article, which will contain your link.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews-section">
+  <div class="container">
+    <div class="section-center" style="margin-bottom:28px;">
+      <div class="section-tag">Social Proof</div>
+      <h2 class="section-title">What our customers think.</h2>
+    </div>
+    <div class="reviews-header">
+      <div class="percent-badge">95%</div>
+      <div class="percent-label">of customers give a 4 or 5-star rating</div>
+      <div class="overall-score">
+        <div class="score-num">4.8<span style="font-size:1.5rem; color:var(--soft)">/5</span></div>
+        <div class="stars" style="font-size:1.2rem; margin: 2px 0; color:var(--star)">★★★★★</div>
+        <div class="score-label">Based on 1602 reviews</div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-meta"><span class="review-time">1 day ago</span><span class="review-stars">★★★★★</span></div>
+        <div class="review-text">User friendly experience making navigation and setting up your order a breeze.</div>
+        <div class="review-author">Cesar Campos</div>
+      </div>
+      <div class="review-card">
+        <div class="review-meta"><span class="review-time">7 days ago</span><span class="review-stars">★★★★★</span></div>
+        <div class="review-text">Always happy with the output. Consistently great results every time.</div>
+        <div class="review-author">David Pye</div>
+      </div>
+      <div class="review-card">
+        <div class="review-meta"><span class="review-time">15 days ago</span><span class="review-stars">★★★★★</span></div>
+        <div class="review-text">So far so good — placements look natural and the dashboard is intuitive.</div>
+        <div class="review-author">Jared Voulo</div>
+      </div>
+      <div class="review-card">
+        <div class="review-meta"><span class="review-time">19 days ago</span><span class="review-stars">★★★★★</span></div>
+        <div class="review-text">Quick and simple ordering process. Exactly what we needed for our clients.</div>
+        <div class="review-author">Edward Schaffer</div>
+      </div>
+      <div class="review-card">
+        <div class="review-meta"><span class="review-time">20 days ago</span><span class="review-stars">★★★★★</span></div>
+        <div class="review-text">Amazing. Thank you! The white-label reports are a game changer for our agency.</div>
+        <div class="review-author">Martin Sarrionandia</div>
+      </div>
+      <div class="review-card">
+        <div class="review-meta"><span class="review-time">27 days ago</span><span class="review-stars">★★★★★</span></div>
+        <div class="review-text">Smooth and simple process. Highly recommend for anyone scaling link building.</div>
+        <div class="review-author">Michael Law</div>
+      </div>
+      <div class="review-card">
+        <div class="review-meta"><span class="review-time">27 days ago</span><span class="review-stars">★★★★★</span></div>
+        <div class="review-text">Very clear and easy. First order went exactly as described. Will order again.</div>
+        <div class="review-author">Casimir Rajnerowicz</div>
+      </div>
+      <div class="review-card">
+        <div class="review-meta"><span class="review-time">28 days ago</span><span class="review-stars">★★★★★</span></div>
+        <div class="review-text">Backlinks made easy. The niche matching is excellent — very relevant placements.</div>
+        <div class="review-author">Michael Smith</div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:8px;">
+      <a href="#" class="see-more-btn">See more reviews →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BOTTOM -->
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-pills">
+      <div class="cta-pill"><span>Genuine</span>Blogger Outreach</div>
+      <div class="cta-pill"><span>Contextual</span>Backlinks</div>
+      <div class="cta-pill"><span>100%</span>Satisfaction Guarantee</div>
+    </div>
+    <h2>Ready to place your Blogger Outreach order?</h2>
+    <a href="#" class="btn-primary" style="font-size:1.1rem; padding:16px 36px;">Order Now</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>Outreach<span>Nomads</span></h3>
+        <p>The World's #1 Blogger Outreach Service trusted by 5000+ agencies since 2012. Natural, relevant links from 100% real bloggers.</p>
+        <p style="font-size:0.8rem; color:rgba(255,255,255,0.4); margin-bottom:12px;">Point North, Park Plaza, Staffordshire, WS12 2DB, United Kingdom</p>
+        <div class="charity-box">
+          <strong>£1 for every order</strong>
+          For every order we donate £1 to <a href="#">Birmingham Children's Hospital Charity</a>. <a href="#">Find out more</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Link Building</a></li>
+          <li><a href="#">PR</a></li>
+          <li><a href="#">AI SEO</a></li>
+          <li><a href="#">Local SEO</a></li>
+          <li><a href="#">Content Writing</a></li>
+          <li><a href="#">Grow (Packages)</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Learning Academy</a></li>
+          <li><a href="#">Read Our Blog</a></li>
+          <li><a href="#">SEO Tools</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Earn Money</h4>
+        <ul>
+          <li><a href="#">Become A Reseller</a></li>
+          <li><a href="#">Become An SEO Affiliate</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Charity</a></li>
+          <li><a href="#">Reviews</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>Copyright © 2026 Outreach Nomads. All rights reserved.</div>
+      <div class="footer-social">
+        <a href="#" title="Facebook">f</a>
+        <a href="#" title="Instagram">in</a>
+        <a href="#" title="LinkedIn">Li</a>
+        <a href="#" title="X / Twitter">𝕏</a>
+        <a href="#" title="YouTube">▶</a>
+      </div>
+      <div class="footer-legal">
+        <a href="#">Terms Of Service</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Toggle pricing currency
+  document.querySelectorAll('.toggle-pill button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.toggle-pill button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  // FAQ accordion
+  function toggleFAQ(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>
