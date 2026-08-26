@@ -1,0 +1,32 @@
+# ── Outreach Nomads — clean URLs ────────────────────────────────────────────
+# outreachnomads.com/index.html        ->  outreachnomads.com
+# outreachnomads.com/niche-edits.html  ->  outreachnomads.com/niche-edits
+
+Options -MultiViews
+RewriteEngine On
+
+# --- Force HTTPS -------------------------------------------------------------
+# Hostinger normally handles this already. Only uncomment if your site is
+# still reachable over plain http:// AND your SSL certificate is active.
+# Enabling this without a working certificate causes a redirect loop.
+#
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# --- 1. /index.html -> /  (301, so Google drops the old URL) -----------------
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^ / [R=301,L]
+
+# --- 2. /anything.html -> /anything  (301) -----------------------------------
+RewriteCond %{THE_REQUEST} \s/+([^.\s?]+)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# --- 3. Strip a trailing slash off real pages --------------------------------
+# Keeps relative asset paths (logos/, .mp4) resolving from the site root.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# --- 4. Serve /anything from anything.html (internal, URL stays clean) -------
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
