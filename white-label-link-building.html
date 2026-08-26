@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>White Label Link Building — Outreach Nomads</title>
+<title>White Label Link Building for Agencies | No Minimum Order — Outreach Nomads</title>
+<meta name="description" content="White label link building with zero branding, 40-80% agency margins, and no minimum order. Dedicated account manager. 120+ agency partners. Become a partner."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet"/>
 <style>
@@ -15,6 +16,16 @@
   .nav-links{display:flex;align-items:center;gap:4px;list-style:none;flex:1}
   .nav-links>li>a{padding:8px 12px;border-radius:8px;font-weight:600;font-size:0.88rem;color:var(--mid);transition:background 0.15s,color 0.15s;display:flex;align-items:center;gap:4px}
   .nav-links>li>a:hover{background:var(--brand-xlight);color:var(--brand-dark)}.nav-links>li>a.active{color:var(--brand-dark)}
+  .nav-links>li.has-dropdown{position:relative}
+  .nav-links>li.has-dropdown>a{cursor:pointer}
+  .nav-links .chevron{font-size:.65rem;opacity:.55;transition:transform .15s;margin-left:2px}
+  .nav-links>li.has-dropdown:hover .chevron,.nav-links>li.has-dropdown:focus-within .chevron{transform:rotate(180deg)}
+  .nav-links>li.has-dropdown.active>a{color:var(--brand-dark)}
+  .nav-dropdown{position:absolute;top:100%;left:0;margin-top:6px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 16px 40px rgba(15,23,42,.14);padding:8px;min-width:210px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .15s,transform .15s,visibility .15s;z-index:200}
+  .nav-links>li.has-dropdown:hover .nav-dropdown,.nav-links>li.has-dropdown:focus-within .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+  .nav-dropdown a{display:block;padding:9px 12px;border-radius:8px;font-weight:600;font-size:.87rem;color:var(--mid);transition:background .15s,color .15s}
+  .nav-dropdown a:hover{background:var(--brand-xlight);color:var(--brand-dark)}
+  .nav-dropdown a.active{color:var(--brand-dark);background:var(--brand-xlight)}
   .nav-actions{display:flex;align-items:center;gap:10px;margin-left:auto}
   .btn-contact{background:var(--brand);color:var(--dark);font-weight:700;padding:9px 18px;border-radius:8px;font-size:0.88rem;border:none;cursor:pointer;transition:background 0.15s}.btn-contact:hover{background:var(--brand-dark);color:#fff}
   .hero{background:linear-gradient(135deg,var(--dark) 0%,#1e3a5f 50%,#0c4a6e 100%);color:#fff;padding:80px 32px 60px;text-align:center;position:relative;overflow:hidden}
@@ -105,6 +116,7 @@
   .footer-top{display:grid;grid-template-columns:1.5fr repeat(4,1fr);gap:40px;margin-bottom:48px}
   .footer-brand h3{font-size:1.5rem;font-weight:900;color:#fff;margin-bottom:6px;letter-spacing:-0.04em}.footer-brand h3 span{color:var(--brand)}
   .footer-brand p{font-size:0.85rem;line-height:1.6;margin-bottom:16px}
+  .footer-owner{font-size:.78rem!important;color:rgba(255,255,255,.4)!important;margin-bottom:0!important}
   .footer-col h4{font-size:0.85rem;font-weight:800;color:#fff;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.08em}
   .footer-col ul{list-style:none}.footer-col ul li{margin-bottom:10px}
   .footer-col ul li a{font-size:0.85rem;color:rgba(255,255,255,0.55);transition:color 0.15s}.footer-col ul li a:hover{color:var(--brand)}
@@ -114,7 +126,15 @@
   .contact-modal{position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;padding:1rem}
   .contact-modal.open{display:flex}
   .modal-overlay{position:absolute;inset:0;background:rgba(15,23,42,0.75);backdrop-filter:blur(4px)}
-  .modal-box{position:relative;z-index:1;background:var(--white);border-radius:var(--radius-lg);padding:40px;width:100%;max-width:500px}
+  .modal-box{position:relative;z-index:1;background:var(--white);border-radius:var(--radius-lg);padding:0;width:100%;max-width:880px;display:grid;grid-template-columns:0.82fr 1fr;overflow:hidden;max-height:92vh}
+  .modal-aside{background:linear-gradient(165deg,#fff 0%,var(--brand-xlight) 55%,var(--brand-light) 100%);padding:34px 28px;display:flex;flex-direction:column;justify-content:center;gap:14px;border-right:1px solid var(--border)}
+  .modal-vid{width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:14px}
+  .modal-vid video{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;display:block}
+  .modal-aside-ttl{font-size:1.15rem;font-weight:900;letter-spacing:-.02em;color:var(--dark);line-height:1.25}
+  .modal-aside-txt{font-size:.86rem;color:var(--mid);line-height:1.6}
+  .modal-aside-mail{font-size:.84rem;font-weight:700;color:var(--brand-deeper);text-decoration:underline;word-break:break-all}
+  .modal-main{padding:40px;overflow-y:auto}
+  @media (max-width:760px){.modal-box{grid-template-columns:1fr;max-width:500px}.modal-aside{display:none}.modal-main{padding:36px 28px}}
   .modal-close{position:absolute;top:16px;right:20px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--soft);transition:color 0.15s}.modal-close:hover{color:var(--dark)}
   .modal-box h3{font-size:1.5rem;font-weight:900;letter-spacing:-0.03em;margin-bottom:6px}.modal-box p{font-size:0.9rem;color:var(--soft);margin-bottom:24px}
   .modal-form{display:flex;flex-direction:column;gap:12px}
@@ -124,36 +144,84 @@
   .modal-form textarea{height:110px;resize:none}
   .modal-form button[type="submit"]{background:var(--brand);color:var(--dark);border:none;padding:14px;border-radius:10px;font-family:'Figtree',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;transition:background 0.15s,transform 0.15s}.modal-form button[type="submit"]:hover{background:var(--brand-dark);color:#fff;transform:translateY(-1px)}
   .modal-success{text-align:center;padding:24px 0;font-size:1.1rem;font-weight:700;color:var(--brand-deeper)}
+  .modal-error{text-align:center;font-size:.88rem;color:#dc2626;margin-top:4px;line-height:1.5}
+  .modal-error a{color:var(--brand-deeper);font-weight:700;text-decoration:underline}
   @media(max-width:768px){nav{padding:0 16px;gap:12px}.nav-links{display:none}.hero,.section{padding-left:16px;padding-right:16px}.footer-top{grid-template-columns:1fr 1fr}.included-grid{grid-template-columns:1fr}.pricing-grid{grid-template-columns:repeat(2,1fr)}}
+  /* HOMEPAGE HERO THEME */
+  .hero{background:#fff;color:var(--dark);padding:0 32px;text-align:left;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(15,23,42,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.05) 1px,transparent 1px);background-size:100% 58px,124px 100%;pointer-events:none;opacity:1}
+  .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 75% at 22% 45%,#fff 38%,rgba(255,255,255,0) 78%);pointer-events:none}
+  .hero-in{position:relative;z-index:1;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:24px;min-height:560px}
+  .hero-copy{padding:52px 0}
+  .hero-label{display:inline-block;background:var(--brand-light);border:1px solid rgba(14,165,233,.2);color:var(--brand-deeper);font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:999px;margin-bottom:20px}
+  .hero h1{color:var(--dark);font-size:clamp(2.2rem,4.4vw,3.6rem);font-weight:900;line-height:1.08;letter-spacing:-.035em;max-width:none;margin:0 0 14px}
+  .hero h1 .hl,.hero .hl{color:var(--brand-dark)}
+  .hero h2,.hero-in>.hero-copy>p{font-size:clamp(1rem,1.5vw,1.2rem);font-weight:400;color:var(--mid);max-width:540px;margin:0 0 22px;line-height:1.55}
+  .hero-bullets{display:flex;flex-direction:column;align-items:flex-start;gap:9px;margin:0 0 26px;list-style:none}
+  .hero-bullets li{display:flex;align-items:center;gap:8px;font-size:.93rem;color:var(--mid)}
+  .hero-bullets li::before{content:'✓';width:18px;height:18px;background:var(--brand);color:var(--dark);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:900;flex-shrink:0}
+  .hero-rating{color:var(--soft);margin-bottom:24px}
+  .hero-ctas{display:flex;justify-content:flex-start;gap:12px;flex-wrap:wrap}
+  .btn-primary{background:var(--brand-dark);color:#fff}
+  .btn-primary:hover{background:var(--brand-deeper);color:#fff}
+  .btn-ghost{color:var(--dark);border-color:var(--dark)}
+  .btn-ghost:hover{border-color:var(--brand-dark);background:var(--brand-xlight)}
+  .hero-media{position:relative;align-self:stretch;display:flex;align-items:center;justify-content:center;min-height:480px}
+  .hero-vid{width:100%;max-width:540px;aspect-ratio:5/4;overflow:hidden;display:block}
+  .hero-vid video{width:100%;height:100%;object-fit:cover;object-position:center center;transform:scale(1.04);mix-blend-mode:multiply;display:block}
+  @media (max-width:900px){
+    .hero{padding-left:16px;padding-right:16px}
+    .hero-in{grid-template-columns:1fr;min-height:0;gap:0}
+    .hero-copy{padding:44px 0 4px;text-align:center}
+    .hero h2,.hero-in>.hero-copy>p{margin-left:auto;margin-right:auto}
+    .hero-bullets{align-items:center}
+    .hero-ctas{justify-content:center}
+    .hero-media{min-height:0;margin-bottom:28px;order:-1}
+    .hero-vid{max-width:360px}
+  }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo">Outreach<span>Nomads</span></div>
+  <a href="index.html" class="nav-logo">Outreach<span>Nomads</span></a>
   <ul class="nav-links">
-    <li><a href="blogger-outreach.html">Blogger Outreach</a></li>
-    <li><a href="niche-edits.html">Niche Edits</a></li>
-    <li><a href="white-label-link-building.html" class="active">White Label</a></li>
-    <li><a href="saas-link-building.html">SaaS Links</a></li>
-    <li><a href="cbd-link-building.html">CBD Links</a></li>
+    <li class="has-dropdown active">
+      <a href="#">Link Building <span class="chevron">▾</span></a>
+      <div class="nav-dropdown">
+        <a href="blogger-outreach.html">Blogger Outreach</a>
+        <a href="niche-edits.html">Niche Edits</a>
+        <a href="white-label-link-building.html" class="active">White Label</a>
+        <a href="saas-link-building.html">SaaS Links</a>
+        <a href="cbd-link-building.html">CBD Links</a>
+      </div>
+    </li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="about.html">About Us</a></li>
   </ul>
   <div class="nav-actions"><button class="btn-contact" onclick="openContact()">Contact Us</button></div>
 </nav>
 
 <section class="hero">
-  <div class="hero-label">White Label Link Building For Agencies</div>
-  <h1>White Label Link Building</h1>
-  <h2>Agency-Grade Backlinks Fully Branded As Your Own. Built For SEO Resellers Who Demand Consistency.</h2>
-  <ul class="hero-bullets">
-    <li>100% white-label — your brand, not ours</li>
-    <li>Unbranded CSV and PDF reports ready for clients</li>
-    <li>Lifetime link guarantee &amp; dedicated account manager</li>
-  </ul>
-  <div class="hero-rating"><span>★★★★★</span> Trusted by 120+ agency partners</div>
-  <div class="hero-ctas">
-    <button class="btn-primary" onclick="openContact()">Become a Partner</button>
-    <button class="btn-ghost" onclick="openContact()">Book a Call</button>
+  <div class="hero-in">
+    <div class="hero-copy">
+      <div class="hero-label">White Label Link Building For Agencies</div>
+      <h1>White Label Link Building</h1>
+      <h2>Agency-Grade Backlinks Fully Branded As Your Own. Built For SEO Resellers Who Demand Consistency.</h2>
+      <ul class="hero-bullets">
+        <li>100% white-label — your brand, not ours</li>
+        <li>No minimum order size — start with a single link</li>
+        <li>Unbranded CSV and PDF reports ready for clients</li>
+        <li>Lifetime link guarantee &amp; dedicated account manager</li>
+      </ul>
+      <div class="hero-ctas">
+        <button class="btn-primary" onclick="openContact()">Become a Partner</button>
+        <button class="btn-ghost" onclick="openContact()">Book a Call</button>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="hero-vid"><video src="Man_reading_and_flipping_pages_202608261623.mp4" autoplay muted loop playsinline preload="auto" disablepictureinpicture aria-label="Baow the panda reading a book"></video></div>
+    </div>
   </div>
 </section>
 
@@ -163,12 +231,11 @@
     <h2 class="section-title">White Label Pricing</h2>
     <p class="section-sub" style="margin-bottom:32px;">Per-link wholesale rates. Mark up by 40–80% and stay competitive. Volume discounts available.</p>
     <div class="pricing-grid">
-      <div class="price-card"><div class="price-tier">DR10+</div><div class="price-traffic">0–1,000 monthly traffic</div><div class="price-amount">$65</div><div class="price-per">/ link</div><button class="price-order" onclick="openContact()">Order Now</button></div>
-      <div class="price-card"><div class="price-tier">DR20+</div><div class="price-traffic">0–5k monthly traffic</div><div class="price-amount">$88</div><div class="price-per">/ link</div><button class="price-order" onclick="openContact()">Order Now</button></div>
-      <div class="price-card popular"><div class="popular-badge">Most Popular</div><div class="price-tier">DR30+</div><div class="price-traffic">100–10k monthly traffic</div><div class="price-amount">$110</div><div class="price-per">/ link</div><button class="price-order" onclick="openContact()">Order Now</button></div>
-      <div class="price-card"><div class="price-tier">DR40+</div><div class="price-traffic">500–20k monthly traffic</div><div class="price-amount">$198</div><div class="price-per">/ link</div><button class="price-order" onclick="openContact()">Order Now</button></div>
-      <div class="price-card"><div class="price-tier">DR50+</div><div class="price-traffic">1k–30k monthly traffic</div><div class="price-amount">$308</div><div class="price-per">/ link</div><button class="price-order" onclick="openContact()">Order Now</button></div>
-      <div class="price-card"><div class="price-tier">DR60+</div><div class="price-traffic">1k–60k monthly traffic</div><div class="price-amount">$420</div><div class="price-per">/ link</div><button class="price-order" onclick="openContact()">Order Now</button></div>
+      <div class="price-card"><div class="price-tier">DR20+</div><div class="price-traffic">500–1k monthly Ahrefs traffic</div><div class="price-amount">$75</div><div class="price-per">/ link</div><button class="price-order" onclick="openContact()">Order Now</button></div>
+      <div class="price-card popular"><div class="popular-badge">Most Popular</div><div class="price-tier">DR30+</div><div class="price-traffic">1k–3k monthly Ahrefs traffic</div><div class="price-amount">$125</div><div class="price-per">/ link</div><button class="price-order" onclick="openContact()">Order Now</button></div>
+      <div class="price-card"><div class="price-tier">DR40+</div><div class="price-traffic">3k–5k monthly Ahrefs traffic</div><div class="price-amount">$175</div><div class="price-per">/ link</div><button class="price-order" onclick="openContact()">Order Now</button></div>
+      <div class="price-card"><div class="price-tier">DR50+</div><div class="price-traffic">5k–10k monthly Ahrefs traffic</div><div class="price-amount">$225</div><div class="price-per">/ link</div><button class="price-order" onclick="openContact()">Order Now</button></div>
+      <div class="price-card"><div class="price-tier">DR60+</div><div class="price-traffic">10k–15k monthly Ahrefs traffic</div><div class="price-amount">$295</div><div class="price-per">/ link</div><button class="price-order" onclick="openContact()">Order Now</button></div>
     </div>
     <div class="included-box">
       <h3>White Label Link Building — What's included:</h3>
@@ -225,6 +292,7 @@
       <div class="benefit-card"><div class="benefit-icon">💰</div><h3>Agency Margins</h3><p>Wholesale pricing lets you mark up 40–80% while staying competitive for your clients.</p></div>
       <div class="benefit-card"><div class="benefit-icon">👤</div><h3>Dedicated Manager</h3><p>Every agency partner gets a named account manager reachable via email or Slack.</p></div>
       <div class="benefit-card"><div class="benefit-icon">📈</div><h3>Scale Without Hiring</h3><p>Deliver links at volume without building an internal outreach team. We scale with your agency.</p></div>
+      <div class="benefit-card"><div class="benefit-icon">🧩</div><h3>Niche Specialization, Resold</h3><p>Resell our <a href="saas-link-building.html" style="color:var(--brand-dark);font-weight:700;">SaaS link building</a> and <a href="cbd-link-building.html" style="color:var(--brand-dark);font-weight:700;">CBD link building</a> services under your own brand — no need to turn away clients in restricted or specialist niches.</p></div>
     </div>
   </div>
 </section>
@@ -287,11 +355,11 @@
 <footer>
   <div class="container">
     <div class="footer-top">
-      <div class="footer-brand"><h3>Outreach<span>Nomads</span></h3><p>Premium link building trusted by 5,000+ agencies. Natural, relevant links from 100% real sites.</p></div>
+      <div class="footer-brand"><h3>Outreach<span>Nomads</span></h3><p>Premium link building trusted by 5,000+ agencies. Natural, relevant links from 100% real sites.</p><p class="footer-owner">Outreach Nomads is a brand owned by Digital Nomadians.</p></div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="blogger-outreach.html">Blogger Outreach</a></li><li><a href="niche-edits.html">Niche Edits</a></li><li><a href="white-label-link-building.html">White Label</a></li><li><a href="saas-link-building.html">SaaS Links</a></li><li><a href="cbd-link-building.html">CBD Links</a></li></ul></div>
-      <div class="footer-col"><h4>Resources</h4><ul><li><a href="#">Blog</a></li><li><a href="#">Case Studies</a></li><li><a href="#">SEO Tools</a></li></ul></div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="blog.html">Blog</a></li><li><a href="#">Case Studies</a></li><li><a href="#">SEO Tools</a></li></ul></div>
       <div class="footer-col"><h4>Earn Money</h4><ul><li><a href="#">Become A Reseller</a></li><li><a href="#">Affiliate Program</a></li></ul></div>
-      <div class="footer-col"><h4>Company</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Reviews</a></li><li><a href="#" onclick="openContact();return false;">Contact Us</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="#">Reviews</a></li><li><a href="#" onclick="openContact();return false;">Contact Us</a></li><li><a href="mailto:support@outreachnomads.com">support@outreachnomads.com</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <div>Copyright &copy; 2026 Outreach Nomads. All rights reserved.</div>
@@ -305,22 +373,90 @@
   <div class="modal-overlay" onclick="closeContact()"></div>
   <div class="modal-box">
     <button class="modal-close" onclick="closeContact()">&#x2715;</button>
-    <h3>Become a Partner</h3>
-    <p>Tell us about your agency and we'll set you up within 24 hours.</p>
-    <form class="modal-form" onsubmit="submitContact(event)">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Work Email" required />
-      <select name="service"><option value="" disabled selected>Service Interested In</option><option>Blogger Outreach</option><option>Niche Edits</option><option selected>White Label Link Building</option><option>SaaS Link Building</option><option>CBD Link Building</option></select>
-      <textarea name="message" placeholder="Tell us about your agency, client count, and monthly link volume..." required></textarea>
-      <button type="submit">Send Message →</button>
-    </form>
+    <aside class="modal-aside">
+      <div class="modal-vid">
+        <video id="contactVid" src="Panda_holding_red_telephone_202608261350.mp4" muted loop playsinline preload="none"></video>
+      </div>
+      <h4 class="modal-aside-ttl">Let's talk links.</h4>
+      <p class="modal-aside-txt">Tell us where you want to rank and we'll come back with real publisher examples and a quote &mdash; usually the same day.</p>
+      <a class="modal-aside-mail" href="mailto:support@outreachnomads.com">support@outreachnomads.com</a>
+    </aside>
+    <div class="modal-main">
+      <h3>Become a Partner</h3>
+      <p>Tell us about your agency and we'll set you up within 24 hours.</p>
+      <form class="modal-form" onsubmit="submitContact(event)">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Work Email" required />
+        <select name="service"><option value="" disabled selected>Service Interested In</option><option>Blogger Outreach</option><option>Niche Edits</option><option selected>White Label Link Building</option><option>SaaS Link Building</option><option>CBD Link Building</option></select>
+        <textarea name="message" placeholder="Tell us about your agency, client count, and monthly link volume..." required></textarea>
+        <button type="submit">Send Message →</button>
+      </form>
+    </div>
   </div>
 </div>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "White Label Link Building",
+  "name": "White Label Link Building for Agencies",
+  "description": "Wholesale, fully unbranded link building for SEO agencies and resellers — no minimum order, 40-80% agency margins, dedicated account management.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Outreach Nomads",
+    "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"1602"}
+  },
+  "areaServed": "Worldwide",
+  "audience": {"@type":"Audience","audienceType":"SEO agencies and resellers"},
+  "offers": [
+    {"@type":"Offer","name":"DR20+ Link","price":"75","priceCurrency":"USD"},
+    {"@type":"Offer","name":"DR30+ Link","price":"125","priceCurrency":"USD"},
+    {"@type":"Offer","name":"DR40+ Link","price":"175","priceCurrency":"USD"},
+    {"@type":"Offer","name":"DR50+ Link","price":"225","priceCurrency":"USD"},
+    {"@type":"Offer","name":"DR60+ Link","price":"295","priceCurrency":"USD"}
+  ],
+  "aggregateRating": {"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"1602"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Will my clients ever see the name \"Outreach Nomads\"?","acceptedAnswer":{"@type":"Answer","text":"Never. Our reports, emails, and all deliverables are completely unbranded. We operate entirely behind the scenes. Your client sees only your agency name on all documentation."}},
+    {"@type":"Question","name":"Can I order for multiple clients in one go?","acceptedAnswer":{"@type":"Answer","text":"Yes — our ordering process allows you to input multiple anchor text and URL combinations in a single order. Tag each entry with a client name to keep things organised in your dashboard export."}},
+    {"@type":"Question","name":"What format are the white-label reports?","acceptedAnswer":{"@type":"Answer","text":"We provide unbranded CSV exports that you can re-format with your agency name and branding. You can also request a PDF template tailored to your agency. Both include: live URL, DR, organic traffic, anchor text, and date placed."}},
+    {"@type":"Question","name":"Is there a minimum order size?","acceptedAnswer":{"@type":"Answer","text":"No minimum. You can start with a single link and scale up as your client base grows. Volume discounts kick in at 20+ links/month — contact us to discuss a custom rate."}},
+    {"@type":"Question","name":"Do you offer a dedicated account manager?","acceptedAnswer":{"@type":"Answer","text":"Yes — all agency partners are assigned a named account manager. For higher-volume partners, Slack access is available for fast communication throughout campaigns."}}
+  ]
+}
+</script>
 <script>
-function openContact(){document.getElementById('contactModal').classList.add('open');document.body.style.overflow='hidden'}
-function closeContact(){document.getElementById('contactModal').classList.remove('open');document.body.style.overflow=''}
-function submitContact(e){e.preventDefault();e.target.innerHTML='<p class="modal-success">Thank you! We\'ll be in touch within 24 hours.</p>'}
+function openContact(){document.getElementById('contactModal').classList.add('open');document.body.style.overflow='hidden';var v=document.getElementById('contactVid');if(v&&v.offsetParent!==null){var p=v.play();if(p&&p.catch)p.catch(function(){})}}
+function closeContact(){document.getElementById('contactModal').classList.remove('open');document.body.style.overflow='';var v=document.getElementById('contactVid');if(v)v.pause()}
+var CONTACT_EMAIL='support@outreachnomads.com';
+function submitContact(e){
+  e.preventDefault();
+  var form=e.target,btn=form.querySelector('button[type="submit"]'),label=btn?btn.textContent:'';
+  var prev=form.querySelector('.modal-error');if(prev)prev.remove();
+  if(btn){btn.disabled=true;btn.textContent='Sending...';}
+  var data=new FormData(form);
+  data.append('_subject','New enquiry from outreachnomads.com');
+  data.append('_template','table');
+  data.append('_captcha','false');
+  fetch('https://formsubmit.co/ajax/'+CONTACT_EMAIL,{method:'POST',headers:{Accept:'application/json'},body:data})
+    .then(function(r){return r.json().catch(function(){return {};}).then(function(j){
+      if(!r.ok||String(j.success)==='false')throw new Error(j.message||'failed');return j;});})
+    .then(function(){form.innerHTML='<p class="modal-success">Thank you! We\'ll be in touch within 24 hours.</p>';})
+    .catch(function(){
+      if(btn){btn.disabled=false;btn.textContent=label;}
+      var p=document.createElement('p');p.className='modal-error';
+      p.innerHTML='Couldn\'t send that \u2014 please email us directly at <a href="mailto:'+CONTACT_EMAIL+'">'+CONTACT_EMAIL+'</a>.';
+      form.appendChild(p);
+    });
+}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeContact()})
 function toggleFAQ(btn){const item=btn.closest('.faq-item');const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open')}
 </script>

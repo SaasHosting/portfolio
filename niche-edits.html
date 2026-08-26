@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Niche Edits Service — Outreach Nomads</title>
+<title>Niche Edits (Link Insertions) | 7-Day Delivery — Outreach Nomads</title>
+<meta name="description" content="Niche edits and link insertions in aged, already-ranking content. 7-14 day average delivery — faster than most providers. DR guaranteed. Lifetime link guarantee."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet"/>
 <style>
@@ -19,6 +20,16 @@
   .nav-links>li>a{padding:8px 12px;border-radius:8px;font-weight:600;font-size:0.88rem;color:var(--mid);transition:background 0.15s,color 0.15s;display:flex;align-items:center;gap:4px}
   .nav-links>li>a:hover{background:var(--brand-xlight);color:var(--brand-dark)}
   .nav-links>li>a.active{color:var(--brand-dark)}
+  .nav-links>li.has-dropdown{position:relative}
+  .nav-links>li.has-dropdown>a{cursor:pointer}
+  .nav-links .chevron{font-size:.65rem;opacity:.55;transition:transform .15s;margin-left:2px}
+  .nav-links>li.has-dropdown:hover .chevron,.nav-links>li.has-dropdown:focus-within .chevron{transform:rotate(180deg)}
+  .nav-links>li.has-dropdown.active>a{color:var(--brand-dark)}
+  .nav-dropdown{position:absolute;top:100%;left:0;margin-top:6px;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 16px 40px rgba(15,23,42,.14);padding:8px;min-width:210px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .15s,transform .15s,visibility .15s;z-index:200}
+  .nav-links>li.has-dropdown:hover .nav-dropdown,.nav-links>li.has-dropdown:focus-within .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+  .nav-dropdown a{display:block;padding:9px 12px;border-radius:8px;font-weight:600;font-size:.87rem;color:var(--mid);transition:background .15s,color .15s}
+  .nav-dropdown a:hover{background:var(--brand-xlight);color:var(--brand-dark)}
+  .nav-dropdown a.active{color:var(--brand-dark);background:var(--brand-xlight)}
   .nav-actions{display:flex;align-items:center;gap:10px;margin-left:auto}
   .btn-contact{background:var(--brand);color:var(--dark);font-weight:700;padding:9px 18px;border-radius:8px;font-size:0.88rem;border:none;cursor:pointer;transition:background 0.15s}
   .btn-contact:hover{background:var(--brand-dark);color:#fff}
@@ -125,6 +136,7 @@
   .footer-brand h3{font-size:1.5rem;font-weight:900;color:#fff;margin-bottom:6px;letter-spacing:-0.04em}
   .footer-brand h3 span{color:var(--brand)}
   .footer-brand p{font-size:0.85rem;line-height:1.6;margin-bottom:16px}
+  .footer-owner{font-size:.78rem!important;color:rgba(255,255,255,.4)!important;margin-bottom:0!important}
   .footer-col h4{font-size:0.85rem;font-weight:800;color:#fff;margin-bottom:14px;text-transform:uppercase;letter-spacing:0.08em}
   .footer-col ul{list-style:none}
   .footer-col ul li{margin-bottom:10px}
@@ -139,7 +151,15 @@
   .contact-modal{position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;padding:1rem}
   .contact-modal.open{display:flex}
   .modal-overlay{position:absolute;inset:0;background:rgba(15,23,42,0.75);backdrop-filter:blur(4px)}
-  .modal-box{position:relative;z-index:1;background:var(--white);border-radius:var(--radius-lg);padding:40px;width:100%;max-width:500px}
+  .modal-box{position:relative;z-index:1;background:var(--white);border-radius:var(--radius-lg);padding:0;width:100%;max-width:880px;display:grid;grid-template-columns:0.82fr 1fr;overflow:hidden;max-height:92vh}
+  .modal-aside{background:linear-gradient(165deg,#fff 0%,var(--brand-xlight) 55%,var(--brand-light) 100%);padding:34px 28px;display:flex;flex-direction:column;justify-content:center;gap:14px;border-right:1px solid var(--border)}
+  .modal-vid{width:100%;aspect-ratio:4/3;overflow:hidden;border-radius:14px}
+  .modal-vid video{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;display:block}
+  .modal-aside-ttl{font-size:1.15rem;font-weight:900;letter-spacing:-.02em;color:var(--dark);line-height:1.25}
+  .modal-aside-txt{font-size:.86rem;color:var(--mid);line-height:1.6}
+  .modal-aside-mail{font-size:.84rem;font-weight:700;color:var(--brand-deeper);text-decoration:underline;word-break:break-all}
+  .modal-main{padding:40px;overflow-y:auto}
+  @media (max-width:760px){.modal-box{grid-template-columns:1fr;max-width:500px}.modal-aside{display:none}.modal-main{padding:36px 28px}}
   .modal-close{position:absolute;top:16px;right:20px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--soft);transition:color 0.15s}
   .modal-close:hover{color:var(--dark)}
   .modal-box h3{font-size:1.5rem;font-weight:900;letter-spacing:-0.03em;margin-bottom:6px}
@@ -152,36 +172,91 @@
   .modal-form button[type="submit"]{background:var(--brand);color:var(--dark);border:none;padding:14px;border-radius:10px;font-family:'Figtree',sans-serif;font-size:1rem;font-weight:800;cursor:pointer;transition:background 0.15s,transform 0.15s}
   .modal-form button[type="submit"]:hover{background:var(--brand-dark);color:#fff;transform:translateY(-1px)}
   .modal-success{text-align:center;padding:24px 0;font-size:1.1rem;font-weight:700;color:var(--brand-deeper)}
-  @media(max-width:768px){nav{padding:0 16px;gap:12px}.nav-links{display:none}.hero,.section{padding-left:16px;padding-right:16px}.footer-top{grid-template-columns:1fr 1fr}.included-grid{grid-template-columns:1fr}.pricing-grid{grid-template-columns:repeat(2,1fr)}}
+  .modal-error{text-align:center;font-size:.88rem;color:#dc2626;margin-top:4px;line-height:1.5}
+  .modal-error a{color:var(--brand-deeper);font-weight:700;text-decoration:underline}
+  .compare-section{background:var(--brand-xlight)}
+  .compare-table{width:100%;max-width:800px;margin:36px auto 0;border-collapse:collapse;background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 2px 12px rgba(15,23,42,0.06)}
+  .compare-table th,.compare-table td{padding:16px 20px;text-align:left;font-size:0.9rem;border-bottom:1px solid var(--border)}
+  .compare-table th{background:var(--dark);color:#fff;font-weight:800;font-size:0.85rem}
+  .compare-table td:first-child,.compare-table th:first-child{font-weight:700;color:var(--dark)}
+  .compare-table tr:last-child td{border-bottom:none}
+  .compare-table td.hl-cell{color:var(--brand-deeper);font-weight:700}
+  @media(max-width:768px){nav{padding:0 16px;gap:12px}.nav-links{display:none}.hero,.section{padding-left:16px;padding-right:16px}.footer-top{grid-template-columns:1fr 1fr}.included-grid{grid-template-columns:1fr}.pricing-grid{grid-template-columns:repeat(2,1fr)}.compare-table{font-size:0.82rem}.compare-table th,.compare-table td{padding:10px 12px}}
+  /* HOMEPAGE HERO THEME */
+  .hero{background:#fff;color:var(--dark);padding:0 32px;text-align:left;position:relative;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(15,23,42,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.05) 1px,transparent 1px);background-size:100% 58px,124px 100%;pointer-events:none;opacity:1}
+  .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 75% at 22% 45%,#fff 38%,rgba(255,255,255,0) 78%);pointer-events:none}
+  .hero-in{position:relative;z-index:1;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:24px;min-height:560px}
+  .hero-copy{padding:52px 0}
+  .hero-label{display:inline-block;background:var(--brand-light);border:1px solid rgba(14,165,233,.2);color:var(--brand-deeper);font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:999px;margin-bottom:20px}
+  .hero h1{color:var(--dark);font-size:clamp(2.2rem,4.4vw,3.6rem);font-weight:900;line-height:1.08;letter-spacing:-.035em;max-width:none;margin:0 0 14px}
+  .hero h1 .hl,.hero .hl{color:var(--brand-dark)}
+  .hero h2,.hero-in>.hero-copy>p{font-size:clamp(1rem,1.5vw,1.2rem);font-weight:400;color:var(--mid);max-width:540px;margin:0 0 22px;line-height:1.55}
+  .hero-bullets{display:flex;flex-direction:column;align-items:flex-start;gap:9px;margin:0 0 26px;list-style:none}
+  .hero-bullets li{display:flex;align-items:center;gap:8px;font-size:.93rem;color:var(--mid)}
+  .hero-bullets li::before{content:'✓';width:18px;height:18px;background:var(--brand);color:var(--dark);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:900;flex-shrink:0}
+  .hero-rating{color:var(--soft);margin-bottom:24px}
+  .hero-ctas{display:flex;justify-content:flex-start;gap:12px;flex-wrap:wrap}
+  .btn-primary{background:var(--brand-dark);color:#fff}
+  .btn-primary:hover{background:var(--brand-deeper);color:#fff}
+  .btn-ghost{color:var(--dark);border-color:var(--dark)}
+  .btn-ghost:hover{border-color:var(--brand-dark);background:var(--brand-xlight)}
+  .hero-media{position:relative;align-self:stretch;display:flex;align-items:center;justify-content:center;min-height:480px}
+  .hero-vid{width:100%;max-width:540px;aspect-ratio:5/4;overflow:hidden;display:block}
+  .hero-vid video{width:100%;height:100%;object-fit:cover;object-position:center center;transform:scale(1.04);mix-blend-mode:multiply;display:block}
+  @media (max-width:900px){
+    .hero{padding-left:16px;padding-right:16px}
+    .hero-in{grid-template-columns:1fr;min-height:0;gap:0}
+    .hero-copy{padding:44px 0 4px;text-align:center}
+    .hero h2,.hero-in>.hero-copy>p{margin-left:auto;margin-right:auto}
+    .hero-bullets{align-items:center}
+    .hero-ctas{justify-content:center}
+    .hero-media{min-height:0;margin-bottom:28px;order:-1}
+    .hero-vid{max-width:360px}
+  }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo">Outreach<span>Nomads</span></div>
+  <a href="index.html" class="nav-logo">Outreach<span>Nomads</span></a>
   <ul class="nav-links">
-    <li><a href="blogger-outreach.html">Blogger Outreach</a></li>
-    <li><a href="niche-edits.html" class="active">Niche Edits</a></li>
-    <li><a href="white-label-link-building.html">White Label</a></li>
-    <li><a href="saas-link-building.html">SaaS Links</a></li>
-    <li><a href="cbd-link-building.html">CBD Links</a></li>
+    <li class="has-dropdown active">
+      <a href="#">Link Building <span class="chevron">▾</span></a>
+      <div class="nav-dropdown">
+        <a href="blogger-outreach.html">Blogger Outreach</a>
+        <a href="niche-edits.html" class="active">Niche Edits</a>
+        <a href="white-label-link-building.html">White Label</a>
+        <a href="saas-link-building.html">SaaS Links</a>
+        <a href="cbd-link-building.html">CBD Links</a>
+      </div>
+    </li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="about.html">About Us</a></li>
   </ul>
   <div class="nav-actions"><button class="btn-contact" onclick="openContact()">Contact Us</button></div>
 </nav>
 
 <section class="hero">
-  <div class="hero-label">Niche Edit Link Building Service</div>
-  <h1>Niche Edits</h1>
-  <h2>Links Inserted Into Existing, Already-Ranked Content. Faster Results. Lower Cost.</h2>
-  <ul class="hero-bullets">
-    <li>Contextual insertion in aged, indexed articles</li>
-    <li>Faster Google recognition — no new content to crawl</li>
-    <li>Lifetime link guarantee &amp; 100% money-back guarantee</li>
-  </ul>
-  <div class="hero-rating"><span>★★★★★</span> Rated 4.8 based on 1,602 reviews</div>
-  <div class="hero-ctas">
-    <button class="btn-primary" onclick="openContact()">Order Now</button>
-    <button class="btn-ghost" onclick="openContact()">Book a Call</button>
+  <div class="hero-in">
+    <div class="hero-copy">
+      <div class="hero-label">Niche Edit Link Building Service</div>
+      <h1>Niche Edits</h1>
+      <h2>Links Inserted Into Existing, Already-Ranked Content. Faster Results. Lower Cost.</h2>
+      <p style="font-size:1.05rem;font-weight:800;color:var(--brand);margin-bottom:20px;">⚡ 7–14 Day Average Delivery — Faster Than Most Niche Edit Providers</p>
+      <ul class="hero-bullets">
+        <li>Contextual insertion in aged, indexed articles</li>
+        <li>Faster Google recognition — no new content to crawl</li>
+        <li>Lifetime link guarantee &amp; 100% money-back guarantee</li>
+      </ul>
+      <div class="hero-ctas">
+        <button class="btn-primary" onclick="openContact()">Order Now</button>
+        <button class="btn-ghost" onclick="openContact()">Book a Call</button>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="hero-vid"><video src="Man_reading_and_flipping_pages_202608261623.mp4" autoplay muted loop playsinline preload="auto" disablepictureinpicture aria-label="Baow the panda reading a book"></video></div>
+    </div>
   </div>
 </section>
 
@@ -191,12 +266,11 @@
     <h2 class="section-title">Niche Edit Pricing</h2>
     <p class="section-sub" style="margin-bottom:32px;">Per-placement pricing. No content writing required. Faster delivery than traditional outreach.</p>
     <div class="pricing-grid">
-      <div class="price-card"><div class="price-tier">DR10+</div><div class="price-traffic">0–1,000 monthly traffic</div><div class="price-amount">$50</div><div class="price-per">/ placement</div><button class="price-order" onclick="openContact()">Order Now</button></div>
-      <div class="price-card"><div class="price-tier">DR20+</div><div class="price-traffic">0–5k monthly traffic</div><div class="price-amount">$72</div><div class="price-per">/ placement</div><button class="price-order" onclick="openContact()">Order Now</button></div>
-      <div class="price-card popular"><div class="popular-badge">Most Popular</div><div class="price-tier">DR30+</div><div class="price-traffic">100–10k monthly traffic</div><div class="price-amount">$96</div><div class="price-per">/ placement</div><button class="price-order" onclick="openContact()">Order Now</button></div>
-      <div class="price-card"><div class="price-tier">DR40+</div><div class="price-traffic">500–20k monthly traffic</div><div class="price-amount">$168</div><div class="price-per">/ placement</div><button class="price-order" onclick="openContact()">Order Now</button></div>
-      <div class="price-card"><div class="price-tier">DR50+</div><div class="price-traffic">1k–30k monthly traffic</div><div class="price-amount">$240</div><div class="price-per">/ placement</div><button class="price-order" onclick="openContact()">Order Now</button></div>
-      <div class="price-card"><div class="price-tier">DR60+</div><div class="price-traffic">1k–60k monthly traffic</div><div class="price-amount">$360</div><div class="price-per">/ placement</div><button class="price-order" onclick="openContact()">Order Now</button></div>
+      <div class="price-card"><div class="price-tier">DR20+</div><div class="price-traffic">500–1k monthly Ahrefs traffic</div><div class="price-amount">$75</div><div class="price-per">/ placement</div><button class="price-order" onclick="openContact()">Order Now</button></div>
+      <div class="price-card popular"><div class="popular-badge">Most Popular</div><div class="price-tier">DR30+</div><div class="price-traffic">1k–3k monthly Ahrefs traffic</div><div class="price-amount">$125</div><div class="price-per">/ placement</div><button class="price-order" onclick="openContact()">Order Now</button></div>
+      <div class="price-card"><div class="price-tier">DR40+</div><div class="price-traffic">3k–5k monthly Ahrefs traffic</div><div class="price-amount">$175</div><div class="price-per">/ placement</div><button class="price-order" onclick="openContact()">Order Now</button></div>
+      <div class="price-card"><div class="price-tier">DR50+</div><div class="price-traffic">5k–10k monthly Ahrefs traffic</div><div class="price-amount">$225</div><div class="price-per">/ placement</div><button class="price-order" onclick="openContact()">Order Now</button></div>
+      <div class="price-card"><div class="price-tier">DR60+</div><div class="price-traffic">10k–15k monthly Ahrefs traffic</div><div class="price-amount">$295</div><div class="price-per">/ placement</div><button class="price-order" onclick="openContact()">Order Now</button></div>
     </div>
     <div class="included-box">
       <h3>Niche Edits — What's included:</h3>
@@ -232,6 +306,25 @@
   </div>
 </section>
 
+<section class="section compare-section">
+  <div class="container section-center">
+    <div class="section-tag">Which Fits Your Campaign?</div>
+    <h2 class="section-title">Niche Edits vs. Guest Posts</h2>
+    <p class="section-sub">Both produce permanent, editorial do-follow links — the right choice depends on your budget and timeline.</p>
+    <table class="compare-table">
+      <thead>
+        <tr><th></th><th>Niche Edits</th><th>Guest Posts</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Cost</td><td class="hl-cell">Lower — no content writing</td><td>Higher — new article required</td></tr>
+        <tr><td>Speed</td><td class="hl-cell">7–14 days average</td><td>14–28 days average</td></tr>
+        <tr><td>Page authority</td><td class="hl-cell">Aged, already-ranking page</td><td>New page, builds authority over time</td></tr>
+        <tr><td>Best for</td><td>Fast wins on proven pages</td><td>Long-form brand mentions &amp; new topics</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
 <section class="examples-section">
   <div class="container section-center">
     <div class="section-tag">Portfolio</div>
@@ -254,6 +347,12 @@
       <div class="benefit-card"><div class="benefit-icon">💰</div><h3>Lower Cost</h3><p>No new content to write means lower pricing — better ROI per link compared to traditional guest posts.</p></div>
       <div class="benefit-card"><div class="benefit-icon">♾️</div><h3>Lifetime Guarantee</h3><p>Every niche edit carries our lifetime link guarantee. If it comes down, we replace it.</p></div>
     </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;padding-bottom:0;">
+  <div class="container section-center">
+    <p style="font-size:0.85rem;color:var(--soft);">Running a software product? Explore our <a href="saas-link-building.html" style="color:var(--brand-dark);font-weight:700;">SaaS link building</a> service.</p>
   </div>
 </section>
 
@@ -317,14 +416,14 @@
 <footer>
   <div class="container">
     <div class="footer-top">
-      <div class="footer-brand"><h3>Outreach<span>Nomads</span></h3><p>Premium link building trusted by 5,000+ agencies. Natural, relevant links from 100% real sites.</p></div>
+      <div class="footer-brand"><h3>Outreach<span>Nomads</span></h3><p>Premium link building trusted by 5,000+ agencies. Natural, relevant links from 100% real sites.</p><p class="footer-owner">Outreach Nomads is a brand owned by Digital Nomadians.</p></div>
       <div class="footer-col"><h4>Services</h4><ul>
         <li><a href="blogger-outreach.html">Blogger Outreach</a></li><li><a href="niche-edits.html">Niche Edits</a></li>
         <li><a href="white-label-link-building.html">White Label</a></li><li><a href="saas-link-building.html">SaaS Links</a></li><li><a href="cbd-link-building.html">CBD Links</a></li>
       </ul></div>
-      <div class="footer-col"><h4>Resources</h4><ul><li><a href="#">Blog</a></li><li><a href="#">Case Studies</a></li><li><a href="#">SEO Tools</a></li></ul></div>
+      <div class="footer-col"><h4>Resources</h4><ul><li><a href="blog.html">Blog</a></li><li><a href="#">Case Studies</a></li><li><a href="#">SEO Tools</a></li></ul></div>
       <div class="footer-col"><h4>Earn Money</h4><ul><li><a href="#">Become A Reseller</a></li><li><a href="#">Affiliate Program</a></li></ul></div>
-      <div class="footer-col"><h4>Company</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Reviews</a></li><li><a href="#" onclick="openContact();return false;">Contact Us</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="#">Reviews</a></li><li><a href="#" onclick="openContact();return false;">Contact Us</a></li><li><a href="mailto:support@outreachnomads.com">support@outreachnomads.com</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <div>Copyright &copy; 2026 Outreach Nomads. All rights reserved.</div>
@@ -338,22 +437,79 @@
   <div class="modal-overlay" onclick="closeContact()"></div>
   <div class="modal-box">
     <button class="modal-close" onclick="closeContact()">&#x2715;</button>
-    <h3>Get In Touch</h3>
-    <p>Tell us about your project and we'll reply within 24 hours.</p>
-    <form class="modal-form" onsubmit="submitContact(event)">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Work Email" required />
-      <select name="service"><option value="" disabled selected>Service Interested In</option><option>Blogger Outreach</option><option selected>Niche Edits</option><option>White Label Link Building</option><option>SaaS Link Building</option><option>CBD Link Building</option></select>
-      <textarea name="message" placeholder="Tell us about your niche, target pages, and monthly budget..." required></textarea>
-      <button type="submit">Send Message →</button>
-    </form>
+    <aside class="modal-aside">
+      <div class="modal-vid">
+        <video id="contactVid" src="Panda_holding_red_telephone_202608261350.mp4" muted loop playsinline preload="none"></video>
+      </div>
+      <h4 class="modal-aside-ttl">Let's talk links.</h4>
+      <p class="modal-aside-txt">Tell us where you want to rank and we'll come back with real publisher examples and a quote &mdash; usually the same day.</p>
+      <a class="modal-aside-mail" href="mailto:support@outreachnomads.com">support@outreachnomads.com</a>
+    </aside>
+    <div class="modal-main">
+      <h3>Get In Touch</h3>
+      <p>Tell us about your project and we'll reply within 24 hours.</p>
+      <form class="modal-form" onsubmit="submitContact(event)">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Work Email" required />
+        <select name="service"><option value="" disabled selected>Service Interested In</option><option>Blogger Outreach</option><option selected>Niche Edits</option><option>White Label Link Building</option><option>SaaS Link Building</option><option>CBD Link Building</option></select>
+        <textarea name="message" placeholder="Tell us about your niche, target pages, and monthly budget..." required></textarea>
+        <button type="submit">Send Message →</button>
+      </form>
+    </div>
   </div>
 </div>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What are Niche Edits?","acceptedAnswer":{"@type":"Answer","text":"Niche edits (also called link insertions or curated links) involve placing your link into an existing, already-published article on a relevant website. Unlike blogger outreach where new content is created, niche edits add your link to aged content that already ranks and carries domain authority."}},
+    {"@type":"Question","name":"How are Niche Edits different from Blogger Outreach?","acceptedAnswer":{"@type":"Answer","text":"Blogger outreach creates new content specifically for your link. Niche edits insert your link into existing content. Niche edits are typically faster, cheaper, and benefit from the aged authority of the existing page. Both produce permanent, editorial-style do-follow links."}},
+    {"@type":"Question","name":"How long does delivery take?","acceptedAnswer":{"@type":"Answer","text":"Because no new content needs to be written, niche edits average 7–14 days from order to live link. Compare this to 14–28 days for blogger outreach. We'll always notify you when your links go live."}},
+    {"@type":"Question","name":"Are Niche Edits safe for SEO?","acceptedAnswer":{"@type":"Answer","text":"Yes — when done correctly. We only use genuine sites with real traffic. We never use PBNs or link networks. All insertions are contextual and read naturally within the existing article. Our approach is the same standard we apply to all our link building services."}},
+    {"@type":"Question","name":"Can I choose the anchor text?","acceptedAnswer":{"@type":"Answer","text":"Yes. You provide your anchor text and target URL when ordering. We'll advise if we think a different anchor would look more natural in the context of the existing article — but the final decision is yours."}},
+    {"@type":"Question","name":"Can these be white-labelled for clients?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. We provide an unbranded CSV delivery report for every order. Perfect for agencies reselling to clients under their own brand."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How Niche Edits Work",
+  "step": [
+    {"@type":"HowToStep","position":1,"name":"We Find Relevant Existing Content","text":"Our team searches for aged, already-ranking articles in your niche using Ahrefs. We look for pages with organic traffic and real authority — not new posts that haven't been indexed yet."},
+    {"@type":"HowToStep","position":2,"name":"We Contact the Publisher","text":"We reach out to the site owner or editor and negotiate a contextual link insertion in the most relevant paragraph of the article. We pitch value — not just a transaction."},
+    {"@type":"HowToStep","position":3,"name":"Link Goes Live & You Get Your Report","text":"Your link is inserted contextually, the page re-indexes, and you receive a full report: live URL, DR, organic traffic, anchor text, and indexed status. Average live time: 7–14 days."}
+  ]
+}
+</script>
 <script>
-function openContact(){document.getElementById('contactModal').classList.add('open');document.body.style.overflow='hidden'}
-function closeContact(){document.getElementById('contactModal').classList.remove('open');document.body.style.overflow=''}
-function submitContact(e){e.preventDefault();e.target.innerHTML='<p class="modal-success">Thank you! We\'ll be in touch within 24 hours.</p>'}
+function openContact(){document.getElementById('contactModal').classList.add('open');document.body.style.overflow='hidden';var v=document.getElementById('contactVid');if(v&&v.offsetParent!==null){var p=v.play();if(p&&p.catch)p.catch(function(){})}}
+function closeContact(){document.getElementById('contactModal').classList.remove('open');document.body.style.overflow='';var v=document.getElementById('contactVid');if(v)v.pause()}
+var CONTACT_EMAIL='support@outreachnomads.com';
+function submitContact(e){
+  e.preventDefault();
+  var form=e.target,btn=form.querySelector('button[type="submit"]'),label=btn?btn.textContent:'';
+  var prev=form.querySelector('.modal-error');if(prev)prev.remove();
+  if(btn){btn.disabled=true;btn.textContent='Sending...';}
+  var data=new FormData(form);
+  data.append('_subject','New enquiry from outreachnomads.com');
+  data.append('_template','table');
+  data.append('_captcha','false');
+  fetch('https://formsubmit.co/ajax/'+CONTACT_EMAIL,{method:'POST',headers:{Accept:'application/json'},body:data})
+    .then(function(r){return r.json().catch(function(){return {};}).then(function(j){
+      if(!r.ok||String(j.success)==='false')throw new Error(j.message||'failed');return j;});})
+    .then(function(){form.innerHTML='<p class="modal-success">Thank you! We\'ll be in touch within 24 hours.</p>';})
+    .catch(function(){
+      if(btn){btn.disabled=false;btn.textContent=label;}
+      var p=document.createElement('p');p.className='modal-error';
+      p.innerHTML='Couldn\'t send that \u2014 please email us directly at <a href="mailto:'+CONTACT_EMAIL+'">'+CONTACT_EMAIL+'</a>.';
+      form.appendChild(p);
+    });
+}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeContact()})
 function toggleFAQ(btn){const item=btn.closest('.faq-item');const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open')}
 </script>
